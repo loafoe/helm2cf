@@ -8,7 +8,7 @@ There are a lot of similarities but also differences between Kubernetes and Clou
 
 With that said, this project can save you massive amounts of time when tasked with converting a Helm chart to a semi-usable set of CF manifests. You also get to use existing Helm templates and logic.
 
-Unintentionally it might fill a gap in the CF world, namely the lack of nice templating and deployment definition scheme like Helm :)
+Unintentionally it might fill a gap in the CF world, namely the lack of nice templating and deployment definition, Helm :)
 
 # usage
 
@@ -16,7 +16,7 @@ Unintentionally it might fill a gap in the CF world, namely the lack of nice tem
 $ docker run --rm -it \
     -v $(pwd)/helm:/helm 
     -v $(pwd)/manifests:/manifests 
-    helm2cf:latest
+    helm2cf:latest --values /helm/my.values.yaml
 ```
 
 ## volume mounts
@@ -24,15 +24,8 @@ $ docker run --rm -it \
 | path | description |
 |------|-------------|
 | /helm | mount your helm chart on this path |
-| /manifets | any CF manifests will be saved here |
-| /helm/
+| /manifests | any CF manifests will be saved at this location |
 
-
-## Ingress
-since k8s ingress is usually configured by annotation it's a challenge to figure this out programmatically from the Helm directly. It would be very cool though if we can deduce a reverse proxy setting based on at least the `nginx` ingress controller.
-
-## Networking
-Network policies are required for container-to-container networking in Cloud foundry. These should be generated based on the Helm charts.
 
 # todo
 
@@ -40,6 +33,14 @@ Network policies are required for container-to-container networking in Cloud fou
 - Generic search and replace map for known wrong values
 - Generate network policies commands based on Helm structure
 - Generate route config based on Ingress discovered annotations
+
+## discussion
+
+### ingress
+since k8s ingress is usually configured by annotation it's a challenge to figure this out programmatically from the Helm directly. It would be very cool though if we can deduce a reverse proxy setting based on at least the `nginx` ingress controller.
+
+### networking
+Network policies are required for container-to-container networking in Cloud foundry. These should be generated based on the Helm charts.
 
 # author
 
