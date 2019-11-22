@@ -8,7 +8,7 @@ There are a lot of similarities but also differences between Kubernetes and Clou
 
 With that said, this project can save you massive amounts of time when tasked with converting a Helm chart to a semi-usable set of CF manifests. You also get to use existing Helm templates and logic.
 
-Unintentionally it might fill a gap in the CF world, namely the lack of nice templating and deployment definition, Helm :)
+Unintentionally, it might fill a gap in the CF world, namely the lack of nice templating and deployment definition tool: Helm 🙈
 
 # usage
 
