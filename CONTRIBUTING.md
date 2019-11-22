@@ -1,6 +1,5 @@
 # Contributing to helm2cf
-
-We'd love for you to contribute to our source code and to make the go-hsdp-api even better than it is today!
+We'd love for you to contribute to our source code and to make helm2cf even better than it is today!
  Here are the guidelines we'd like you to follow:
 
  - [Question or Problem?](#question)
@@ -68,7 +67,7 @@ Before you submit your merge request consider the following guidelines:
     git push origin my-fix-branch
     ```
 
-In Github, send a pull request to original master branch: f.e. `go-hsdp-api:master`.
+In Github, send a pull request to original master branch: f.e. `helm2cf:master`.
 If we suggest changes, then:
 
 * Make the required updates.
@@ -119,4 +118,4 @@ from the main (upstream) repository:
 ## <a name="info"></a> Info
 
 [contribute]: CONTRIBUTING.md
-[github]: https://github.com/philips-software/go-hsdp-api/issues 
+[github]: https://github.com/philips-software/helm2cf/issues 
