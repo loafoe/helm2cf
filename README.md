@@ -1,6 +1,6 @@
 # helm2cf
 
-The goal of this tool is to reuse as much of a project's Helm magic to (ideally) extract working Cloud foundry `manifest.yml` files which can be used as a starting point to deploy the charts to a Cloud foundry environment.
+The goal of this tool is to reuse as much of a project's Helm magic to (ideally) extract working Cloud foundry `manifest.yml` files which can be used as a starting point to deploy the charts to a Cloud foundry environment. 
 
 # expectations and rationale
 
@@ -28,8 +28,8 @@ $ docker run --rm -it \
 
 
 # todo
-
 - Make the CF `manifest.yml` template a parameter. Currently hardcoded
+- Convert `StatefulSets` and `DaemonSets`
 - Generic search and replace map for known wrong values
 - Generate network policies commands based on Helm structure
 - Generate route config based on Ingress discovered annotations
@@ -41,6 +41,9 @@ since k8s ingress is usually configured by annotation it's a challenge to figure
 
 ### networking
 Network policies are required for container-to-container networking in Cloud foundry. These should be generated based on the Helm charts.
+
+### volume mounts
+Workloads which rely heavily on persistent volumes will be hard to convert as Cloud foundry deployments typically do not support volume attachments.
 
 # author
 
