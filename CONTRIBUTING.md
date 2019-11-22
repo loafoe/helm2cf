@@ -1,4 +1,4 @@
-# Contributing to hsdp-go-api
+# Contributing to helm2cf
 
 We'd love for you to contribute to our source code and to make the go-hsdp-api even better than it is today!
  Here are the guidelines we'd like you to follow:
