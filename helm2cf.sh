@@ -45,21 +45,20 @@ convert_template_to_manifest() {
     _name=$(_depl 'metadata.name')
     _image=$(_depl 'spec.template.spec.containers[0].image')
     _replicas=$(_depl 'spec.replicas')
-    _appname=$1
     _memory=1G
     _disk_quota=1G
     MANIFEST_FILE=/manifests/$_name.yml
 
     cat <<EOF > $MANIFEST_FILE
 applications:
-- name: $1
+- name: $_name
   disk_quota: $_disk_quota
   docker:
     image: $_image
   instances: $_replicas
   memory: $_memory
   routes:
-  - route: $_appname.apps.internal
+  - route: $_name.apps.internal
 EOF
     # Convert to JSON for better handling
     _json=$(yq r -j $MANIFEST_FILE)
